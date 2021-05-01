@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/vegetable_img"
+            android:layout_height="150dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.061"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="150dp"
+            app:layout_constraintVertical_bias="0.18"
+            app:layout_constraintStart_toStartOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@id/vegetable_img"
+            android:layout_height="245dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="245dp"
+            app:layout_constraintVertical_bias="0.31"
+            app:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/veg_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.017"
+            app:layout_constraintHorizontal_bias="0.706"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:alpha="0" />
+        <Constraint
+            android:id="@+id/veg_option"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/vegetable_img"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.055"
+            app:layout_constraintTop_toBottomOf="@+id/veg_name"
+            app:layout_constraintHorizontal_bias="0.719"
+            android:alpha="0" />
+    </ConstraintSet>
+
+    <Transition
+        android:id="@+id/my_transition"
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start"
+        app:autoTransition="animateToEnd"
+        app:duration="5000"/>
+    <Transition
+        app:constraintSetEnd="@+id/end"
+        app:constraintSetStart="@+id/start"
+        app:autoTransition="animateToStart"
+        app:duration="1000"/>
+</MotionScene>
